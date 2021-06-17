@@ -26,14 +26,11 @@ function calc() {
         var totalprice1 = Math.round(num1 * num2);
         document.getElementById("result").innerHTML = totalprice1;
 
-
         var totalprice2 = Math.round(num3 * num4);
         document.getElementById("result2").innerHTML = totalprice2;
 
-
         var grandtotal = Math.round(totalprice1 + totalprice2);
         document.getElementById("grandTotal").innerHTML = grandtotal;
-
 
         if (document.getElementById("yes").checked) {
             document.getElementById("Yes1").innerHTML = "Has Membership Card";
@@ -46,10 +43,10 @@ function calc() {
             document.getElementById("discount").innerHTML = 0;
             document.getElementById("finalPrice").innerHTML = grandtotal;
         }
-        alert("Calculation successful! Press OK to see result");
+        alert("Successfully calculated! Press OK to see result");
     }
     else {
-        alert("Complete Your Form");
+        alert("Complete Your Form !");
     }
     return false;
 }
