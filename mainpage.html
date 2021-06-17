@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIN PAGE</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+    <script src="jquery-1.10.0.min.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">YOUR FOOD SOLUTION</h1>
+
+    <ul class="menu_ul">
+        <ul class="menu_ul li">
+            <ul class="menu_ul a">
+                <ul class="menu_ul a:hover">
+                    <li menu="menu_ul"><a href="mainpage.html" target="location">Home</a></li>
+                    <li menu="menu_ul"><a href="product.html" target="location">List of Food</a></li>
+                    <li menu="menu_ul"><a href="orderform.html" target="location">Order Form</a></li>
+                    <li menu="menu_ul"><a href="contact.html" target="location">Contact Us</a></li>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+    <h4 align="center">Your Food Solution is one of the companies established by 3 members, namely Intan Nuraudhatul
+        Syafiqah, Nurulhuda and Jamilah.
+        <br>The product that we will sell through this e-commerce system is food. There are various types of food that
+        we will sell in this website system.
+    </h4>
+    
+    <!-- Slideshow container -->
+
+    <div class="slideshow-container" align="center">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 10</div>
+            <img src="b1.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 10</div>
+            <img src="s1.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 10</div>
+            <img src="p1.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 10</div>
+            <img src="b4.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 10</div>
+            <img src="b5.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 10</div>
+            <img src="b6.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">7 / 10</div>
+            <img src="b7.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">8 / 10</div>
+            <img src="b2.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">9 / 10</div>
+            <img src="b3.jpeg" style="width:30%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">10 / 10</div>
+            <img src="s2.jpeg" style="width:30%">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
+        <span class="dot" onclick="currentSlide(10)"></span>
+    </div>
+    </div>
+
+    <script>
+        //Automatic slide show
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // change image every 2 second
+        }
+    </script>
+</body>
+
+</html>

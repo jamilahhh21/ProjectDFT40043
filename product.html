@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT GALLERY</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+    <script src="jquery-1.10.0.min.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        /* Center website */
+        .main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+        }
+
+        .row {
+            margin: 10px -16px;
+        }
+
+        /* Add padding BETWEEN each column */
+        .row,
+        .row>.column {
+            padding: 8px;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33%;
+            display: none;
+            /* Hide all elements by default */
+        }
+
+        /* Clear floats after rows */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Content */
+        .content {
+            background-color: white;
+            padding: 10px;
+        }
+
+        /* The "show" class is added to the filtered elements */
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">YOUR FOOD SOLUTION</h1>
+
+    <ul class="menu_ul">
+        <ul class="menu_ul li">
+            <ul class="menu_ul a">
+                <ul class="menu_ul a:hover">
+                    <li menu="menu_ul"><a href="mainpage.html" target="location">Home</a></li>
+                    <li menu="menu_ul"><a href="product.html" target="location">List of Food</a></li>
+                    <li menu="menu_ul"><a href="orderform.html" target="location">Order Form</a></li>
+                    <li menu="menu_ul"><a href="contact.html" target="location">Contact Us</a></li>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+
+    <h1><img src="b2.jpeg" width="500" height="300" class="center"></h1>
+
+    <h4 align="center">Your Food Solution is one of the companies established by 3 members, namely Intan Nuraudhatul
+        Syafiqah, Nurulhuda and Jamilah.
+        <br>The product that we will sell through this e-commerce system is food. There are various types of food that
+        we will sell in this website system.
+    </h4>
+    
+    <div class="main">
+
+        <h1 style="text-align:center; font-family:'Times New Roman', Times, serif;">FOOD GALLERY</h1>
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="column ">
+            <div class="content">
+                <img src="b1.jpeg" style="width:100%">
+                <h4>Burger double cheese</h4>
+                <p>RM 25.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="s3.jpeg" style="width:100%">
+                <h4>Spaghetti pesto </h4>
+                <p>RM 15.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="b3.jpeg" style="width:100%">
+                <h4>Chicken burger layer</h4>
+                <p>RM 20.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="b5.jpeg" style="width:100%">
+                <h4>Lamb burger</h4>
+                <p>RM 40.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="b7.jpeg" style="width:100%">
+                <h4>Nachos cheese burger</h4>
+                <p>RM 20.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="s1.jpeg" style="width:100%">
+                <h4>Spaghetti Bolognese</h4>
+                <p>RM 10.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="p1.jpeg" style="width:100%">
+                <h4>Peperoni Pizza<h4>
+                <p>RM 10.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="s2.jpeg" style="width:100%">
+                <h4>Aglio Olio</h4>
+                <p>RM 18.00</p>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="content">
+                <img src="p2.jpeg" style="width:100%">
+                <h4>Pizza cheezey meatball</h4>
+                <p>RM 15.00</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+    </script>
+</body>
+
+</html>
